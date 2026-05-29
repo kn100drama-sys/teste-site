@@ -97,7 +97,10 @@ app.post("/sunize/create", async (req, res) => {
                 quantity: 1,
                 is_physical: true
             }],
-            ip: req.headers["x-forwarded-for"] || req.socket.remoteAddress || "127.0.0.1",
+            ip: (req.headers["x-forwarded-for"] || req.socket.remoteAddress || "")
+    .split(",")[0]
+    .replace("::ffff:", "")
+    .trim(),
             customer: {
                 name: customer.name,
                 email: customer.email,
