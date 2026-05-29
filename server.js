@@ -8,7 +8,7 @@ app.use(express.json());
 
 // 🔥 CORS (ajuste depois com seu domínio Netlify)
 app.use(cors({
-    origin: "https://paniinii.netlify.app"
+    origin: "https://paninii.online"
 }));
 
 const PAYMENTS_FILE = "./payments.json";
